@@ -9,6 +9,7 @@ namespace Geekbrains.ConsoleApp
 			Console.WriteLine("введите имя ");
 			var name = Console.ReadLine();		
 			Console.WriteLine($"привет {name} {DateTime.Now}" );
+
 			Console.ReadKey();
 		}
 	}
