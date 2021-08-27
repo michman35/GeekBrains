@@ -6,7 +6,10 @@ namespace Geekbrains.ConsoleApp
 	{
 		static void Main(string[] args)
 		{
-			Console.WriteLine("Hello World!");
+			Console.WriteLine("введите имя ");
+			var name = Console.ReadLine();		
+			Console.WriteLine($"привет {name} {DateTime.Now}" );
+			Console.ReadKey();
 		}
 	}
 }
