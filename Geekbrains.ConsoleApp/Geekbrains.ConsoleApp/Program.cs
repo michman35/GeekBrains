@@ -7,8 +7,9 @@ namespace Geekbrains.ConsoleApp
 		static void Main(string[] args)
 		{
 			var lesson3 = new Lesson3();
-			lesson3.LogArray();
-			lesson3.LogArrayReverse();
+			//lesson3.LogArray();
+			//lesson3.LogArrayReverse();
+			lesson3.GoodArray();
 			Console.ReadKey();
 		}
 	}

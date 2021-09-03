@@ -8,16 +8,16 @@ namespace Geekbrains.ConsoleApp
 {
 	class Lesson3
 	{
-		public void LogArray() 
+		public void LogArray()
 		{
 			const int rows = 5;
 			const int columns = 2;
 
-			
+
 			var array = new string[rows, columns];
-			
-				array[0, 0] = "popov";
-				array[0, 1] = "8921111111";
+
+			array[0, 0] = "popov";
+			array[0, 1] = "8921111111";
 
 			array[1, 0] = "repin";
 			array[1, 1] = "8925651111";
@@ -42,13 +42,29 @@ namespace Geekbrains.ConsoleApp
 		{
 			Console.WriteLine("введите строку");
 			var word = Console.ReadLine();
-			for(int  i = word.Length-1; i >=0; i--)
+			for(int i = word.Length - 1; i >= 0; i--)
 			{
 				Console.Write(word[i]);
 			}
 		}
 
+		public void GoodArray()
+		{
+			int x = 0;
+			int[,] a = new int[3, 3];
+			var s = a.Length;
+			for(int i = 0; i < 3; i++)
+			{
+				for(int j = 0; j < 3; j++)
+				{
+					a[i, j] = x + 1;
 
+					Console.WriteLine($"{x} {a[i, j]}");
+					x++;
+				}
+			}
 
+		}
 	}
 }
+
