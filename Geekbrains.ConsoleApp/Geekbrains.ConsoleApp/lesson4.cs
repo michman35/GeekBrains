@@ -57,6 +57,8 @@ namespace Geekbrains.ConsoleApp
 			}
 
 			return YearType.None;
+			
 		}
+	
 	}
 }
