@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Text;
@@ -10,30 +11,36 @@ namespace Geekbrains.ConsoleApp
 	{
 		static void Main(string[] args)
 		{
-			// задание 1
-
-			//Console.WriteLine("введите текст");
-
-			//string text = Console.ReadLine();
-			//File.WriteAllText("text.txt", text);
-
-			using(var stream = File.Open("startup.txt", FileMode.Append))
-			using(var stramWriter = new StreamWriter(stream))
+			var process = Process.GetProcesses();
+			for(int i = 0; i < process.Length; i++)
 			{
-				
-				stramWriter.WriteLine(DateTime.Now.TimeOfDay);
+				var p = process[i];
+				Console.WriteLine($"{p.Id} {p.ProcessName}");
 			}
 
-			Console.WriteLine("числа");
+			Console.WriteLine("введите id ");
+			var id = int.Parse(Console.ReadLine());
+			var kill = Process.GetProcessById(id);
+			kill.Kill();
 
-			string text = Console.ReadLine();
-			//var bytes = text.Split(" ").Select(x => byte.Parse(x)).ToArray();
-			//File.WriteAllBytes("text.dll", bytes);
+			Console.WriteLine("введите имя процесса ");
+			var name = Console.ReadLine();
 
-		    File.WriteAllText("text.dll", text);
+			for(int i = 0; i < process.Length; i++)
+			{
+				var p = process[i];
+
+				if( name == p.ProcessName)
+				{
+					p.Kill();
+					
+				}
+              
+			}
+
 
 		}
-
 	}
 }
+
 
